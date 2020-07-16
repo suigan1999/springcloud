@@ -1,0 +1,16 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db6
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: server-provider   #注册到eureka的服务名称
+mybatis:
+  type-aliases-package: com.bianyiit.domian
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka   #连接eureka的地址

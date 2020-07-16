@@ -1,0 +1,17 @@
+server:
+  port: 10010  #端口号
+spring:
+  application:
+    name: zuul  #注册到Eureka的服务名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka   #连接eureka的地址
+zuul:
+  routes:
+    server-provider: /server-provider/**
+    service-consumer: /service-consumer/**
+    #path: /server-provider/**   # 这里是映射路径
+     # url: http://127.0.0.1:8082  # 这里是映射路径映射的实际地址
+#    serviceId: server-provider  #指定服务名称
+  prefix: /api  #添加路由前缀(加不加都可以)
